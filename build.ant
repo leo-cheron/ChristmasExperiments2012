@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<project basedir="." default="compile">
+
+  <taskdef name="jscomp" classname="com.google.javascript.jscomp.ant.CompileTask"
+           classpath="build/compiler.jar"/>
+
+  <target name="compile">
+    
+    <jscomp compilationLevel="simple" warning="verbose" debug="true" output="${basedir}/js/scripts.js">
+
+      <externs dir="${basedir}/js">
+        <file name="externs.js"/>
+      </externs>
+
+		<sources dir="${basedir}/js/libs">
+			<file name="jquery-1.8.3.min.js"/>
+			<file name="gl-matrix.js"/>
+			<file name="Global.js"/>
+		</sources>
+
+		<sources dir="${basedir}/js/src/display">
+			<file name="Shape.js"/>
+			<file name="ShapeData.js"/>
+		</sources>
+
+		<sources dir="${basedir}/js/src/game">
+			<file name="Background.js"/>
+			<file name="Game.js"/>
+			<file name="Score.js"/>
+			<file name="Slicer.js"/>
+			<file name="Splash.js"/>
+		</sources>
+
+      <sources dir="${basedir}/js/src/physics">
+        <file name="Anchor.js"/>
+        <file name="Stick.js"/>
+      </sources>
+
+      <sources dir="${basedir}/js/src">
+        <file name="Main.js"/>
+      </sources>
+    </jscomp>
+    
+  </target>
+
+</project>
