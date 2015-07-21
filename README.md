@@ -1,4 +1,4 @@
-# ChristmasExperiments2012
+# Cut It Out, for Christmas Experiments 2012
 
 2012 contribution for http://christmasexperiments.com
 
