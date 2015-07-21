@@ -19,15 +19,18 @@ function Game(ctx, wrapper)
 	this._soundTrack = document.getElementById("soundtrack");
 	this._soundTrack.volume = 0.2;
 
-	$(window).blur(function() {
+	$(window).blur(function() 
+	{
 		self._soundTrack.pause();
 	});
-	$(window).focus(function() {
+	$(window).focus(function() 
+	{
 		self._soundTrack.play();
 	});
 
 	// ui
-	setTimeout(function() {
+	setTimeout(function() 
+	{
 		$("#score, #time, #life").css("opacity", 1);
 	}, 100);
 
@@ -177,7 +180,8 @@ Game.prototype._lost = function ()
 		.find(".restart")
 		.removeAttr("disabled");
 
-	setTimeout(function() {
+	setTimeout(function() 
+	{
 		$("#message-lost").addClass("displayed");
 	}, 100);
 

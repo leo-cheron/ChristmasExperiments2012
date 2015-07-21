@@ -41,7 +41,8 @@ Splash.prototype._init = function()
 	$("#splash .begin").bind("webkitTransitionEnd oTransitionEnd otransitionend transitionend msTransitionEnd", function()
 	{
 		$("#splash").addClass("translate");
-		setTimeout(function() {
+		setTimeout(function() 
+		{
 			self._gingerMan.init(self._ctx, ShapeData.gingerMan, m, -15, 0);
 			$(self).animate({_alpha: 1}, 500);
 		}, 480);
@@ -68,7 +69,8 @@ Splash.prototype.draw = function()
 			this._unlocked = true;
 			this._dom.addClass("hidden");
 
-			$(this).animate({_alpha: 0}, 700, function() {
+			$(this).animate({_alpha: 0}, 700, function() 
+			{
 				$(self).trigger(Splash.UNLOCKED);
 			});
 		}
